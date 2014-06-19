@@ -814,7 +814,8 @@ class ForecastInfo:
                     #visibility_unit = self.getText(head_n, 'ud')
 
                     location_n = self.getChild(weather_n, 'loc')
-                    city, country = self.getText(location_n, 'dnam').split(',')
+                    city = self.getText(location_n, 'dnam').split(',')[0]
+                    country = self.getText(location_n, 'dnam').split(',')[2]
                     country = country.strip()
 
                     # current conditions data
