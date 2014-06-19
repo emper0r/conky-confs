@@ -1,0 +1,93 @@
+######################
+# - Conky settings - #
+######################
+background no
+update_interval 1
+ 
+cpu_avg_samples 2
+net_avg_samples 2
+ 
+override_utf8_locale yes
+ 
+#Mémoire
+double_buffer yes            #Éviter le clignotement
+no_buffers yes               #Soustraire les mémoires tampons de la mémoire utilisée
+text_buffer_size 1024        #Taille du cache pour le texte 
+#imlib_cache_size 0
+ 
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_argb_value 180
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+ 
+border_inner_margin 0
+border_outer_margin 0
+ 
+minimum_size 0 300
+maximum_width 300
+
+alignment tl
+gap_x 10
+gap_y 230
+ 
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+ 
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Santana:size=18
+xftalpha 0.8 
+uppercase no
+
+################
+# - Couleurs - #
+################
+# default_color ffffff
+default_color DBDBDB
+color1 868686                #Blanc cassé
+color2 606060                #Gris
+color3 91E990                # Conky vert1
+color4 71916F                # Conky vert clair
+#color5
+
+#Réglages système
+cpu_avg_samples 1            #Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+net_avg_samples 2            #Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+
+############
+# - Code - #
+############
+TEXT
+#${image ~/.bin/conky/images/network.png 48x200} ${voffset 12}${goto 69}${font Santana:size=8:style=Bold}Network
+${voffset 12}${goto 20}${font Santana:size=8:style=Bold}Network
+${voffset 20}${goto 20}${font Santana:size=8}${if_existing /sys/class/net/eth0/operstate up}IP eth0 :$alignr${addr eth0}
+${voffset 20}${goto 20}${font Santana:size=8}${if_existing /sys/class/net/eth1/operstate up}IP eth1 :$alignr${addr eth1}
+${voffset 20}${goto 20}${font Santana:size=8}${if_existing /sys/class/net/wlan1/operstate up}IP wlan1 :$alignr${addr wlan1}
+${goto 69}${font Santana:size=8}IP public :$alignr${texeci 3600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}${endif}
+${voffset 12}${goto 20}${font Santana:size=8}Download: ${voffset 1}$alignr${font Santana:size=8}${downspeed eth1} k/s
+${goto 69}${font Santana:size=8}${color}Total: ${voffset 1}$alignr${font Santana:size=8}${totaldown eth1}
+$alignr${downspeedgraph eth1 20,220 91E990 ffffff}
+${voffset 6}${goto 20}${font Santana:size=8}Upload: ${voffset 1}$alignr${font Santana:size=8}${upspeed eth1} k/s
+${goto 69}${font Santana:size=8}Total: ${voffset 1}$alignr${font Santana:size=8}${totalup eth1}
+$alignr${upspeedgraph eth1 20,220 91E990 ffffff}
+${voffset 4}${goto 20}${color}Port(s) open(s) :    ${tcp_portmon 1 65535 count}
+${goto 69}${tcp_portmon 1 65535 rhost 0} $alignr${tcp_portmon 1 65535 lservice 0}
+${goto 69}${tcp_portmon 1 65535 rhost 1} $alignr${tcp_portmon 1 65535 lservice 1}
+${goto 69}${tcp_portmon 1 65535 rhost 2} $alignr${tcp_portmon 1 65535 lservice 2}
+${goto 69}${tcp_portmon 1 65535 rhost 3} $alignr${tcp_portmon 1 65535 lservice 3}
+${goto 69}${tcp_portmon 1 65535 rhost 4} $alignr${tcp_portmon 1 65535 lservice 4}
+${goto 69}${tcp_portmon 1 65535 rhost 5} $alignr${tcp_portmon 1 65535 lservice 5}
+${goto 69}${tcp_portmon 1 65535 rhost 6} $alignr${tcp_portmon 1 65535 lservice 6}

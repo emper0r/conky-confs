@@ -1,0 +1,5 @@
+[--datatype=TI --maxlength=27]
+[--datatype=AR --maxlength=27]
+[--datatype=AL --maxlength=27]
+[--datatype=BR]kbps
+[--datatype=YR]
