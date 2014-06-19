@@ -35,7 +35,7 @@ just put the files in the correct path and run conky.
 SCREENSHOTS
 ===========
 
-https://github.com/emper0r/IVAO-status/tree/master/screenshots
+https://github.com/emper0r/conky-confs/tree/master/screenshot
 
 
 LICENSE
