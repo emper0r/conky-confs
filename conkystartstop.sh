@@ -14,5 +14,6 @@ else
     conky -c ~/.Conky/cpu &
     conky -c ~/.Conky/core0 &
     conky -c ~/.Conky/core1 &
+    conky -c ~/.Conky/weather &
     exit
 fi
