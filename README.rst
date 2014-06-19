@@ -34,6 +34,7 @@ just put the files in the correct path and run conky.
 - Put 'bin' and 'Config' directories into your HOME/user as hidden directories
 
   $ cp bin ~/.bin
+
   $ cp Conky ~/.Conky/
 
 - Then run conkystartstop.sh
