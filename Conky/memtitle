@@ -33,7 +33,7 @@ minimum_size 370 200
 maximum_width 320
 
 alignment tl
-gap_x 0
+gap_x 1
 gap_y 47
  
 #########################
