@@ -31,7 +31,7 @@ GET THE SOURCE
 If you like the screenshot and have a screen with size 1280x728,
 just put the files in the correct path and run conky.
 
-- Put 'bin' and 'Config' directories into your HOME/user as hidden directories
+- Put 'bin' and 'Conky' directories into your HOME/user as hidden directories
 
   $ cp bin ~/.bin
 
