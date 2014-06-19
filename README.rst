@@ -12,8 +12,8 @@ that displays any information on your desktop.
 Conky is licensed under the GPL and runs on Linux and BSD.
 http://conky.sourceforge.net
 
-MY PERSONAL CONCKY
-==================
+MY PERSONAL CONKY
+=================
 
 This is how I use the conky on may laptop, getting the files from:
 a french site, and adapted into my size screen.
