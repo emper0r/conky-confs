@@ -74,5 +74,5 @@ lua_load ~/.bin/conky/cpufreq.lua
 # - Code - #
 ############
 TEXT
-${image ~/.bin/conky/images/cpu04.png 48x300}  ${font Santana:size=10:style=Bold}AMD Turion(tm) II P540 Dual-Core Processor
+${font Santana:size=10:style=Bold}AMD Turion(tm) II P540 Dual-Core Processor
 ${offset 65}${font Santana:size=10}Ondemand ${lua cpu_freq_g 0} GHz | Max. ${lua cpu_freq_max_g 0}${font Santana:size=10} GHz
